@@ -1,59 +1,57 @@
-# AngularTemplating
+# Angular Content Projection Demo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.0.
+This project demonstrates modern content projection techniques in Angular 22, using PrimeNG for UI styling.
 
-## Development server
+## Features
+
+The demo covers the following key concepts:
+
+1. **Basic `ng-content`**: Simple content projection with fallback content
+2. **Named Slots**: Content projection with selectable slots using attributes or CSS classes
+3. **`ng-container`**: Using the container element to avoid extra DOM nodes
+4. **`NgTemplateOutlet`**: Dynamically rendering templates with context
+5. **Angular 22 Modern Syntax**: Using `@if`, `@for`, `@switch` instead of structural directives
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (LTS)
+- npm or pnpm
+
+### Installation
+
+```bash
+pnpm install
+```
+
+### Development Server
 
 To start a local development server, run:
 
 ```bash
+pnpm start
+# or
 ng serve
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
+### Building
 
 To build the project run:
 
 ```bash
+pnpm build
+# or
 ng build
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
 ## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Angular Content Projection Guide](https://angular.dev/guide/components/content-projection)
+- [Angular Template Syntax](https://angular.dev/guide/templates)
+- [PrimeNG Documentation](https://primeng.org/)
+- [Vercel Angular Deployment Guide](https://vercel.com/docs/frameworks/angular)
