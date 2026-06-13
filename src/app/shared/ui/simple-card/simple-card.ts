@@ -17,7 +17,8 @@ import { Card } from 'primeng/card';
   selector: 'simple-card',
   imports: [Card],
   templateUrl: './simple-card.html',
+  styleUrl: './simple-card.css',
 })
 export class SimpleCard {
-  title = input<string>("Simple Card");
+  title = input<string>('Simple Card');
 }

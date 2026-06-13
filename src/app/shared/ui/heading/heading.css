@@ -1,0 +1,23 @@
+.section-heading {
+  max-width: 820px;
+  margin-bottom: 24px;
+}
+
+.heading-xl,
+.heading-lg {
+  width: 100%;
+  margin: 0 0 12px;
+  color: #0f172a;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.heading-xl {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+}
+
+.heading-lg {
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  line-height: 1.08;
+}

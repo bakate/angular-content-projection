@@ -1,23 +1,23 @@
-# Angular Content Projection Demo
+# Démo de Projection de Contenu Angular
 
-This project demonstrates modern content projection techniques in Angular 22, using PrimeNG for UI styling.
+Ce projet démontre les techniques modernes de projection de contenu dans Angular 22, en utilisant PrimeNG pour le style.
 
-## Features
+## Fonctionnalités
 
-The demo covers the following key concepts:
+La démo couvre les concepts clés suivants :
 
-1. **Basic `ng-content`**: Simple content projection with fallback content
-2. **Named Slots**: Content projection with selectable slots using attributes or CSS classes
-3. **`ng-container`**: Using the container element to avoid extra DOM nodes
-4. **`NgTemplateOutlet`**: Dynamically rendering templates with context
-5. **Angular 22 Modern Syntax**: Using `@if`, `@for`, `@switch` instead of structural directives
+1. **ng-content basique** : Projection de contenu simple avec contenu de secours
+2. **Slots nommés** : Projection de contenu avec slots sélectionnables par attributs ou classes CSS
+3. **ng-container** : Utilisation de l'élément conteneur pour éviter les nœuds DOM supplémentaires
+4. **NgTemplateOutlet** : Rendu dynamique de modèles avec contexte
+5. **Syntaxe moderne Angular 22** : Utilisation de @if, @for, @switch au lieu des directives structurelles
 
-## Getting Started
+## Pour commencer
 
-### Prerequisites
+### Prérequis
 
 - Node.js (LTS)
-- npm or pnpm
+- npm ou pnpm
 
 ### Installation
 
@@ -25,33 +25,51 @@ The demo covers the following key concepts:
 pnpm install
 ```
 
-### Development Server
+### Serveur de développement
 
-To start a local development server, run:
+Pour lancer un serveur de développement local, exécutez :
 
 ```bash
 pnpm start
-# or
+# ou
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Une fois le serveur en cours d'exécution, ouvrez votre navigateur et accédez à http://localhost:4200/. L'application se rechargera automatiquement chaque fois que vous modifierez l'un des fichiers source.
 
-### Building
+### Construction
 
-To build the project run:
+Pour construire le projet :
 
 ```bash
 pnpm build
-# or
+# ou
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Cela compilera votre projet et stockera les artefacts de construction dans le répertoire dist/. Par défaut, la build de production optimise votre application pour la performance et la vitesse.
 
-## Additional Resources
+## Déployer sur Vercel
 
-- [Angular Content Projection Guide](https://angular.dev/guide/components/content-projection)
-- [Angular Template Syntax](https://angular.dev/guide/templates)
-- [PrimeNG Documentation](https://primeng.org/)
-- [Vercel Angular Deployment Guide](https://vercel.com/docs/frameworks/angular)
+### Étape 1 : Préparer votre dépôt
+- Poussez votre code sur GitHub (public ou privé)
+- Assurez-vous que votre dépôt est correctement commit (c'est déjà fait !)
+
+### Étape 2 : Configurer Vercel
+1. Allez sur vercel.com et connectez votre compte GitHub
+2. Cliquez sur "New Project" et sélectionnez votre dépôt
+3. Vercel devrait détecter automatiquement votre projet Angular !
+4. Aucune configuration supplémentaire nécessaire - Vercel va :
+   - Installer les dépendances
+   - Construire le projet avec ng build
+   - Déployer les ressources statiques depuis dist/
+
+### Étape 3 : Déployer !
+- Cliquez sur "Deploy" et Vercel s'occupe du reste !
+
+## Ressources supplémentaires
+
+- [Guide de Projection de Contenu Angular](https://angular.dev/guide/components/content-projection)
+- [Syntaxe des Modèles Angular](https://angular.dev/guide/templates)
+- [Documentation PrimeNG](https://primeng.org/)
+- [Guide de Déploiement Vercel Angular](https://vercel.com/docs/frameworks/angular)

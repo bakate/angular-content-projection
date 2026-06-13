@@ -1,0 +1,31 @@
+.default-card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 190px;
+  padding: 20px;
+  border-radius: 14px;
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.12), rgba(15, 23, 42, 0.7)),
+    linear-gradient(135deg, #475569, #0f172a);
+}
+
+.default-card-header span {
+  font-size: 0.84rem;
+  font-weight: 750;
+  opacity: 0.88;
+}
+
+.default-card-header strong {
+  margin-top: 8px;
+  font-size: 1.55rem;
+  line-height: 1.05;
+}
+
+.default-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
