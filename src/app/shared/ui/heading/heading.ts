@@ -8,5 +8,6 @@ import { Component, input } from '@angular/core';
 })
 export class Heading {
   title = input.required<string>();
-  level = input<'lg' | 'xl'>('xl');
+  eyebrow = input<string>('');
+  level = input<'hero' | 'lg' | 'xl'>('xl');
 }

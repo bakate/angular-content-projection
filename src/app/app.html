@@ -1,261 +1,363 @@
-<main class="page-shell">
-  <section class="hero-section">
-    <div class="hero-content">
-      <p class="hero-label">Patrons de modèles Angular 22</p>
-      <h1>La projection de contenu n'est pas un input sophistiqué.</h1>
-      <p class="hero-copy">
-        Les inputs font descendre les données. Les outputs font monter les événements. La projection de
-        contenu permet au parent de posséder le markup tandis que l'enfant possède la mise en page, le
-        comportement et les limites.
-      </p>
-      <div class="hero-actions">
-        <a class="primary-link" href="#projection-basics">Commencer avec ng-content</a>
-        <a class="secondary-link" href="#template-outlet">Aller à NgTemplateOutlet</a>
+<main class="page-shell py-5">
+  <section class="hero-section grid align-items-center gap-4 p-4 md:p-6 border-round-xl shadow-4">
+    <div class="col-12 lg:col flex flex-column justify-content-center">
+      <heading
+        title="La projection de contenu n'est pas un input sophistiqué."
+        level="hero"
+        eyebrow="Projection de contenu avec Angular 22"
+      >
+        <p class="hero-copy mt-4 mb-0 line-height-3">
+          Les inputs te servent à faire descendre des données. Les outputs te servent à remonter des
+          événements. La projection de contenu te sert à laisser le parent écrire le markup pendant
+          que l'enfant garde la mise en page, le comportement et les limites.
+        </p>
+      </heading>
+
+      <div class="flex flex-column sm:flex-row gap-2 mt-4">
+        <a
+          class="p-button p-component justify-content-center no-underline"
+          href="#projection-basics"
+        >
+          <span class="p-button-label">Commence avec ng-content</span>
+        </a>
+        <a
+          class="p-button p-component p-button-outlined justify-content-center no-underline"
+          href="#template-outlet"
+        >
+          <span class="p-button-label">Va à NgTemplateOutlet</span>
+        </a>
       </div>
     </div>
 
-    <div class="hero-panel" aria-label="Modèle mental de projection">
-      <div class="panel-column parent-column">
-        <span class="panel-label">Composant parent</span>
-        <code>&lt;product-card&gt;</code>
-        <code>&lt;button card-actions&gt;Acheter&lt;/button&gt;</code>
+    <div
+      class="col-12 lg:col hero-panel flex flex-column gap-3 p-4 border-1 border-round-xl"
+      aria-label="Modèle mental de projection"
+    >
+      <div class="grid align-items-stretch flex-1">
+        <div
+          class="col-12 md:col panel-column parent-column flex flex-column justify-content-center gap-3 p-3 border-round-lg"
+        >
+          <span class="panel-label font-bold uppercase">Composant parent</span>
+          <code>&lt;product-card&gt;</code>
+          <code>&lt;button card-actions&gt;Acheter&lt;/button&gt;</code>
+        </div>
+
+        <div
+          class="hidden md:flex col-fixed panel-arrow text-primary font-bold align-items-center"
+          aria-hidden="true"
+        >
+          ->
+        </div>
+
+        <div
+          class="col-12 md:col panel-column child-column flex flex-column justify-content-center gap-3 p-3 border-round-lg"
+        >
+          <span class="panel-label font-bold uppercase">Composant enfant</span>
+          <code>&lt;ng-content select="[card-actions]" /&gt;</code>
+        </div>
       </div>
-      <div class="panel-arrow" aria-hidden="true">-></div>
-      <div class="panel-column child-column">
-        <span class="panel-label">Composant enfant</span>
-        <code>&lt;ng-content select="[card-actions]" /&gt;</code>
+
+      <div class="projected-result flex align-items-center gap-3 p-3 border-round-lg">
+        <i class="pi pi-arrow-down-right text-primary" aria-hidden="true"></i>
+        <div>
+          <span class="panel-label font-bold uppercase">Résultat projeté</span>
+          <p class="m-0 mt-1 line-height-3">
+            Tu définis le bouton côté parent, mais Angular le rend dans la zone prévue par l'enfant.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="principles-section" aria-label="Quand utiliser la projection">
-    <article>
-      <span class="principle-number">01</span>
-      <h2>Utilisez les inputs pour les données.</h2>
-      <p>Passez des valeurs lorsque l'enfant peut décider complètement comment cette valeur doit être affichée.</p>
+  <section class="grid mt-4 mb-8" aria-label="Quand utiliser la projection">
+    <article class="col-12 md:col-4">
+      <div class="principle-card h-full p-4 border-round-xl shadow-2">
+        <span class="text-primary font-bold">01</span>
+        <h2 class="mt-3 mb-2">Utilise les inputs pour les données.</h2>
+        <p class="m-0 line-height-3">
+          Passe une valeur quand l'enfant peut décider seul comment l'afficher.
+        </p>
+      </div>
     </article>
-    <article>
-      <span class="principle-number">02</span>
-      <h2>Utilisez les outputs pour les événements.</h2>
-      <p>Réémettez les décisions vers le parent lorsque l'enfant expose une interaction.</p>
+    <article class="col-12 md:col-4">
+      <div class="principle-card h-full p-4 border-round-xl shadow-2">
+        <span class="text-primary font-bold">02</span>
+        <h2 class="mt-3 mb-2">Utilise les outputs pour les événements.</h2>
+        <p class="m-0 line-height-3">Remonte une décision quand l'enfant expose une interaction.</p>
+      </div>
     </article>
-    <article>
-      <span class="principle-number">03</span>
-      <h2>Utilisez la projection pour le markup.</h2>
-      <p>Projetez du contenu lorsque le parent doit choisir le HTML, l'arborescence de composants ou les champs de formulaire.</p>
+    <article class="col-12 md:col-4">
+      <div class="principle-card h-full p-4 border-round-xl shadow-2">
+        <span class="text-primary font-bold">03</span>
+        <h2 class="mt-3 mb-2">Utilise la projection pour le markup.</h2>
+        <p class="m-0 line-height-3">
+          Projette du contenu quand tu veux choisir le HTML, l'arborescence de composants ou les
+          champs de formulaire.
+        </p>
+      </div>
     </article>
   </section>
 
   <section id="projection-basics" class="lesson-section">
     <heading title="1. Bases de ng-content" level="lg">
       <p class="section-copy">
-        <code>ng-content</code> est un placeholder. Si le parent envoie du contenu, Angular déplace ce
-        contenu dans la vue enfant. Sinon, l'enfant peut conserver un contenu de secours utile.
+        <code>ng-content</code> est un placeholder. Quand tu projettes du contenu depuis le parent,
+        Angular le place dans la vue enfant. Sinon, l'enfant peut conserver un contenu de secours
+        utile.
       </p>
     </heading>
 
-    <div class="lesson-grid three-columns">
-      <simple-card title="Pas de contenu projeté"></simple-card>
+    <div class="grid">
+      <div class="col-12 md:col-4">
+        <simple-card title="Pas de contenu projeté"></simple-card>
+      </div>
 
-      <simple-card title="Contenu projeté">
-        <h3 class="card-heading">Résumé de commande</h3>
-        <p class="explanation-text">
-          Ce titre et ce paragraphe sont écrits par le parent, mais affichés à l'intérieur de la carte enfant.
-        </p>
-        <dl class="summary-list">
-          <div>
-            <dt>Sous-total</dt>
-            <dd>89 EUR</dd>
-          </div>
-          <div>
-            <dt>Taxes</dt>
-            <dd>17 EUR</dd>
-          </div>
-        </dl>
-      </simple-card>
+      <div class="col-12 md:col-4">
+        <simple-card title="Contenu projeté">
+          <h3 class="card-heading mt-0 mb-2">Résumé de commande</h3>
+          <p class="section-copy">
+            Tu écris ce titre et ce paragraphe côté parent, mais ils s'affichent à l'intérieur de la
+            carte enfant.
+          </p>
+          <dl class="summary-list mt-3 mb-0">
+            <div class="flex justify-content-between py-2 border-bottom-1 surface-border">
+              <dt>Sous-total</dt>
+              <dd class="m-0 font-bold">89 EUR</dd>
+            </div>
+            <div class="flex justify-content-between py-2 border-bottom-1 surface-border">
+              <dt>Taxes</dt>
+              <dd class="m-0 font-bold">17 EUR</dd>
+            </div>
+          </dl>
+        </simple-card>
+      </div>
 
-      <simple-card title="Arborescence de composants projetée">
-        <p class="explanation-text">
-          La projection accepte n'importe quel contenu Angular : texte, bindings, composants, boutons ou formulaires.
-        </p>
-        <p-button label="Envoyer une notification" icon="pi pi-bell" (onClick)="showNotification()" />
-        @if (notificationVisible()) {
-          <p class="success-message">Le bouton projeté a mis à jour l'état du parent.</p>
-        }
-      </simple-card>
+      <div class="col-12 md:col-4">
+        <simple-card title="Arborescence de composants projetée">
+          <p class="section-copy">
+            Tu peux projeter n'importe quel contenu Angular : texte, bindings, composants, boutons
+            ou formulaires.
+          </p>
+          <p-button
+            label="Envoie une notification"
+            icon="pi pi-bell"
+            (onClick)="showNotification()"
+          />
+          @if (notificationVisible()) {
+            <p class="success-message mt-3 mb-0 p-3 border-round-lg">
+              Le bouton projeté a mis à jour l'état du parent.
+            </p>
+          }
+        </simple-card>
+      </div>
     </div>
   </section>
 
   <section class="lesson-section">
     <heading title="2. Slots nommés" level="lg">
       <p class="section-copy">
-        Les slots nommés transforment un composant réutilisable en un petit contrat de mise en page. L'enfant expose des slots
-        avec des sélecteurs, puis le parent choisit exactement ce qui va dans chaque slot.
+        Les slots nommés transforment ton composant réutilisable en petit contrat de mise en page.
+        Tu exposes des zones avec des sélecteurs, puis le parent choisit exactement quoi projeter
+        dans chaque zone.
       </p>
     </heading>
 
-    <div class="lesson-grid three-columns">
-      <card></card>
+    <div class="grid">
+      <div class="col-12 md:col-4">
+        <card></card>
+      </div>
 
-      <card>
-        <div card-header class="product-banner analytics-banner">
-          <span>Module d'analyse</span>
-          <strong>Revenus en temps réel</strong>
-        </div>
-        <h3 card-title>Sélecteurs d'attributs</h3>
-        <p card-subtitle>Les slots peuvent cibler des attributs comme <code>[card-title]</code>.</p>
-        <p card-content class="m-0">
-          Utilisez des attributs lorsque l'élément projeté n'a pas de classe sémantique propre.
-        </p>
-        <div card-footer class="slot-footer">
-          <p-button label="Inspecter" severity="secondary" [outlined]="true" />
-          <p-button label="Appliquer" />
-        </div>
-      </card>
+      <div class="col-12 md:col-4">
+        <card>
+          <div
+            card-header
+            class="product-banner analytics-banner flex flex-column justify-content-end p-4 border-round-lg"
+          >
+            <span>Module d'analyse</span>
+            <strong>Revenus en temps réel</strong>
+          </div>
+          <h3 card-title>Sélecteurs d'attributs</h3>
+          <p card-subtitle>
+            Les slots peuvent cibler des attributs comme <code>[card-title]</code>.
+          </p>
+          <p card-content class="m-0">
+            Utilise des attributs lorsque l'élément projeté n'a pas de classe sémantique propre.
+          </p>
+          <div card-footer class="flex justify-content-end gap-2 mt-4">
+            <p-button label="Inspecte" severity="secondary" [outlined]="true" />
+            <p-button label="Applique" />
+          </div>
+        </card>
+      </div>
 
-      <card>
-        <div class="card-header product-banner workflow-banner">
-          <span>Module de workflow</span>
-          <strong>Checklist de release</strong>
-        </div>
-        <h3 class="card-title">Sélecteurs de classe</h3>
-        <p class="card-subtitle">Les slots peuvent également cibler des classes comme <code>.card-title</code>.</p>
-        <p class="card-content m-0">
-          Utilisez des classes lorsque le contenu appartient déjà à un système de design existant.
-        </p>
-        <div class="card-footer slot-footer">
-          <p-button label="Annuler" severity="secondary" [outlined]="true" />
-          <p-button label="Lancer" />
-        </div>
-      </card>
+      <div class="col-12 md:col-4">
+        <card>
+          <div
+            class="card-header product-banner workflow-banner flex flex-column justify-content-end p-4 border-round-lg"
+          >
+            <span>Module de workflow</span>
+            <strong>Checklist de release</strong>
+          </div>
+          <h3 class="card-title">Sélecteurs de classe</h3>
+          <p class="card-subtitle">
+            Les slots peuvent également cibler des classes comme <code>.card-title</code>.
+          </p>
+          <p class="card-content m-0">
+            Utilise des classes lorsque le contenu appartient déjà à un système de design existant.
+          </p>
+          <div class="card-footer flex justify-content-end gap-2 mt-4">
+            <p-button label="Annule" severity="secondary" [outlined]="true" />
+            <p-button label="Lance" />
+          </div>
+        </card>
+      </div>
     </div>
 
-    <div class="code-note">
-      <code>&lt;ng-content select="[card-title], .card-title"&gt;&lt;/ng-content&gt;</code>
-      <span
-        >Un slot peut accepter plusieurs sélecteurs. Cela rend l'API flexible sans ajouter
-        d'inputs.</span
+    <div class="code-note mt-3 p-4 border-1 surface-border border-round-lg">
+      <span class="panel-label block mb-2 font-bold uppercase">À retenir</span>
+      <code class="block mb-2"
+        >&lt;ng-content select="[card-title], .card-title"&gt;&lt;/ng-content&gt;</code
       >
+      <p class="m-0 line-height-3">
+        Un slot peut accepter plusieurs sélecteurs. Tu rends l'API flexible sans ajouter une cascade
+        d'inputs pour chaque zone de la carte.
+      </p>
     </div>
   </section>
 
   <section class="lesson-section">
     <heading title="3. ng-container" level="lg">
       <p class="section-copy">
-        <code>ng-container</code> regroupe la logique du modèle sans ajouter un vrai élément au DOM. Il
-        est utile lorsque le regroupement n'est que pour le flux de contrôle Angular.
+        <code>ng-container</code> te permet de regrouper la logique du template sans ajouter un vrai
+        élément au DOM. Utilise-le quand le regroupement sert seulement au flux de contrôle Angular.
       </p>
     </heading>
 
-    <div class="lesson-grid two-columns">
-      <simple-card title="Avec un wrapper supplémentaire">
-        <p class="explanation-text">
-          Le <code>div</code> supplémentaire n'existe que pour contenir la boucle. Cela peut perturber les grilles CSS, les
-          mises en page flex ou la sémantique d'accessibilité.
-        </p>
-        <div class="dom-preview">
-          <code>&lt;div&gt;</code>
-          @for (item of items; track item.id) {
-            <span>{{ item.name }}</span>
-          }
-          <code>&lt;/div&gt;</code>
-        </div>
-      </simple-card>
-
-      <simple-card title="Avec ng-container">
-        <p class="explanation-text">
-          Angular regroupe toujours le flux de contrôle, mais le navigateur ne reçoit que le contenu rendu.
-        </p>
-        <div class="dom-preview clean-preview">
-          <ng-container>
+    <div class="grid">
+      <div class="col-12 md:col-6">
+        <simple-card title="Avec un wrapper supplémentaire">
+          <p class="section-copy">
+            Le <code>div</code> supplémentaire n'existe que pour contenir la boucle. Tu risques de
+            perturber les grilles CSS, les mises en page flex ou la sémantique d'accessibilité.
+          </p>
+          <div
+            class="dom-preview flex flex-wrap align-items-center gap-2 mt-3 p-3 border-1 surface-border border-round-lg"
+          >
+            <code>&lt;div&gt;</code>
             @for (item of items; track item.id) {
               <span>{{ item.name }}</span>
             }
-          </ng-container>
-        </div>
-      </simple-card>
+            <code>&lt;/div&gt;</code>
+          </div>
+        </simple-card>
+      </div>
+
+      <div class="col-12 md:col-6">
+        <simple-card title="Avec ng-container">
+          <p class="section-copy">
+            Angular regroupe toujours le flux de contrôle, mais ton navigateur ne reçoit que le
+            contenu réellement rendu.
+          </p>
+          <div
+            class="dom-preview clean-preview flex flex-wrap align-items-center gap-2 mt-3 p-3 border-1 border-round-lg"
+          >
+            <ng-container>
+              @for (item of items; track item.id) {
+                <span>{{ item.name }}</span>
+              }
+            </ng-container>
+          </div>
+        </simple-card>
+      </div>
     </div>
   </section>
 
   <section id="template-outlet" class="lesson-section">
     <heading title="4. ng-template et NgTemplateOutlet" level="lg">
       <p class="section-copy">
-        <code>ng-template</code> stocke du markup sans le rendre immédiatement.
-        <code>NgTemplateOutlet</code> décide quel modèle rendre et quel contexte fournir.
+        <code>ng-template</code> te laisse stocker du markup sans le rendre immédiatement.
+        <code>NgTemplateOutlet</code> te laisse choisir quel template rendre et quel contexte lui
+        fournir.
       </p>
     </heading>
 
-    <div class="lesson-grid two-columns">
-      <div class="demo-surface">
-        <div class="segmented-control" aria-label="Sélectionner le modèle actif">
-          <p-button
-            label="Accueil"
-            icon="pi pi-home"
-            [outlined]="currentView() !== 'home'"
-            (onClick)="currentView.set('home')"
-          />
-          <p-button
-            label="À propos"
-            icon="pi pi-info-circle"
-            [outlined]="currentView() !== 'about'"
-            (onClick)="currentView.set('about')"
-          />
-          <p-button
-            label="Contact"
-            icon="pi pi-send"
-            [outlined]="currentView() !== 'contact'"
-            (onClick)="currentView.set('contact')"
-          />
-        </div>
+    <div class="grid">
+      <div class="col-12 md:col-6">
+        <div class="demo-surface h-full p-4 border-round-xl shadow-2">
+          <div class="flex flex-wrap gap-2 mb-4" aria-label="Sélectionner le modèle actif">
+            <p-button
+              label="Accueil"
+              icon="pi pi-home"
+              [outlined]="currentView() !== 'home'"
+              (onClick)="currentView.set('home')"
+            />
+            <p-button
+              label="À propos"
+              icon="pi pi-info-circle"
+              [outlined]="currentView() !== 'about'"
+              (onClick)="currentView.set('about')"
+            />
+            <p-button
+              label="Contact"
+              icon="pi pi-send"
+              [outlined]="currentView() !== 'contact'"
+              (onClick)="currentView.set('contact')"
+            />
+          </div>
 
-        <div class="template-result">
-          @switch (currentView()) {
-            @case ('home') {
-              <ng-template [ngTemplateOutlet]="homeTemplate"></ng-template>
+          <div class="template-result p-4 border-round-lg">
+            @switch (currentView()) {
+              @case ('home') {
+                <ng-template [ngTemplateOutlet]="homeTemplate"></ng-template>
+              }
+              @case ('about') {
+                <ng-template [ngTemplateOutlet]="aboutTemplate"></ng-template>
+              }
+              @default {
+                <ng-template [ngTemplateOutlet]="contactTemplate"></ng-template>
+              }
             }
-            @case ('about') {
-              <ng-template [ngTemplateOutlet]="aboutTemplate"></ng-template>
-            }
-            @default {
-              <ng-template [ngTemplateOutlet]="contactTemplate"></ng-template>
-            }
-          }
+          </div>
         </div>
       </div>
 
-      <simple-card title="Contexte de modèle">
-        <list title="Composant liste réutilisable">
-          @for (item of items; track item.id) {
-            <li [class.border-bottom-1]="!$last" class="template-list-item surface-border">
-              <ng-template
-                [ngTemplateOutlet]="custom"
-                [ngTemplateOutletContext]="{ $implicit: item }"
-              ></ng-template>
-            </li>
-          }
-        </list>
-      </simple-card>
+      <div class="col-12 md:col-6">
+        <simple-card title="Contexte de modèle">
+          <list title="Composant liste réutilisable">
+            @for (item of items; track item.id) {
+              <li [class.border-bottom-1]="!$last" class="template-list-item py-3 surface-border">
+                <ng-template
+                  [ngTemplateOutlet]="custom"
+                  [ngTemplateOutletContext]="{ $implicit: item }"
+                ></ng-template>
+              </li>
+            }
+          </list>
+        </simple-card>
+      </div>
     </div>
   </section>
 
-  <section class="lesson-section final-section">
+  <section class="lesson-section">
     <heading title="5. Modale avec projection de contenu" level="lg">
       <p class="section-copy">
-        Une modale est un cas d'utilisation parfait de projection : la modale possède le focus, l'overlay et le positionnement ; le
-        parent possède le corps, les formulaires et les actions du pied de page.
+        Une modale est un cas parfait pour la projection : tu laisses la modale gérer le focus,
+        l'overlay et le positionnement, puis tu projettes le corps, les formulaires et les actions.
       </p>
     </heading>
 
-    <div class="modal-demo">
+    <div
+      class="modal-demo flex flex-column md:flex-row justify-content-between align-items-start md:align-items-center gap-4 p-4 border-round-xl shadow-2"
+    >
       <div>
-        <h3>Shell réutilisable, contenu personnalisé.</h3>
-        <p>
-          Pas besoin d'inventer une douzaine d'inputs comme <code>confirmLabel</code>, <code>cancelLabel</code>,
-          <code>description</code>, ou <code>footerTemplate</code>.
+        <h3 class="mt-0 mb-2">Shell réutilisable, contenu personnalisé.</h3>
+        <p class="m-0 line-height-3">
+          Tu n'as pas besoin d'inventer une douzaine d'inputs comme <code>confirmLabel</code>,
+          <code>cancelLabel</code>, <code>description</code>, ou <code>footerTemplate</code>.
         </p>
       </div>
       <p-button
-        label="Ouvrir la modale projetée"
+        label="Ouvre la modale projetée"
         icon="pi pi-window-maximize"
         (onClick)="modalVisible.set(true)"
       />
@@ -263,41 +365,47 @@
   </section>
 
   <modal [(visible)]="modalVisible" header="La projection garde la modale flexible">
-    <div modal-body class="modal-content">
+    <div modal-body class="modal-content line-height-3">
       <p class="mb-3">
-        Ce corps est projeté par le parent. Il pourrait s'agir d'un formulaire, d'une étape d'assistant, d'un avertissement ou d'un
-        composant imbriqué.
+        Tu projettes ce corps depuis le parent. Ça peut être un formulaire, une étape d'assistant,
+        un avertissement ou un composant imbriqué.
       </p>
-      <div class="modal-checklist">
-        <span>La modale possède le comportement d'accessibilité et d'overlay</span>
-        <span>Le parent possède le contenu métier spécifique</span>
+      <div class="grid">
+        <span class="col-12 p-3 border-round-lg"
+          >Tu gardes le comportement d'accessibilité et d'overlay dans la modale</span
+        >
+        <span class="col-12 p-3 border-round-lg"
+          >Tu gardes le contenu métier spécifique dans le parent</span
+        >
       </div>
     </div>
-    <div modal-footer class="slot-footer">
+    <div modal-footer class="flex justify-content-end gap-2 mt-4">
       <p-button
-        label="Annuler"
+        label="Annule"
         severity="secondary"
         [outlined]="true"
         (onClick)="modalVisible.set(false)"
       />
-      <p-button label="Confirmer" (onClick)="modalVisible.set(false)" />
+      <p-button label="Confirme" (onClick)="modalVisible.set(false)" />
     </div>
   </modal>
 </main>
 
 <ng-template #homeTemplate>
-  <h3 class="template-title">Modèle accueil</h3>
-  <p class="template-copy">Affiché parce que <code>currentView()</code> est <code>home</code>.</p>
+  <h3 class="template-title mt-0 mb-2">Modèle accueil</h3>
+  <p class="template-copy m-0">
+    Affiché parce que <code>currentView()</code> est <code>home</code>.
+  </p>
 </ng-template>
 
 <ng-template #aboutTemplate>
-  <h3 class="template-title">Modèle à propos</h3>
-  <p class="template-copy">Même composant hôte, différente référence de modèle.</p>
+  <h3 class="template-title mt-0 mb-2">Modèle à propos</h3>
+  <p class="template-copy m-0">Même composant hôte, différente référence de modèle.</p>
 </ng-template>
 
 <ng-template #contactTemplate>
-  <h3 class="template-title">Modèle contact</h3>
-  <p class="template-copy">L'outlet garde la logique de commutation explicite et lisible.</p>
+  <h3 class="template-title mt-0 mb-2">Modèle contact</h3>
+  <p class="template-copy m-0">L'outlet garde la logique de commutation explicite et lisible.</p>
 </ng-template>
 
 <ng-template #custom let-item>

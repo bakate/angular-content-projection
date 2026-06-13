@@ -1,4 +1,19 @@
-<div class="section-heading">
-  <h2 [class]="level() === 'xl' ? 'heading-xl' : 'heading-lg'">{{ title() }}</h2>
+<div class="section-heading mb-4">
+  @if (eyebrow()) {
+    <p class="heading-label m-0 mb-3 text-primary font-bold uppercase">{{ eyebrow() }}</p>
+  }
+
+  @switch (level()) {
+    @case ('hero') {
+      <h1 class="heading-hero mt-0 mb-3">{{ title() }}</h1>
+    }
+    @case ('xl') {
+      <h2 class="heading-xl mt-0 mb-3">{{ title() }}</h2>
+    }
+    @default {
+      <h2 class="heading-lg mt-0 mb-3">{{ title() }}</h2>
+    }
+  }
+
   <ng-content></ng-content>
 </div>

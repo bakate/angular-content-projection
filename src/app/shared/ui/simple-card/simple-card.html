@@ -1,10 +1,12 @@
-<p-card [header]="title()" styleClass="demo-card">
+<p-card [header]="title()" class="demo-card">
   <!-- ng-content acts as a placeholder for projected content -->
   <ng-content>
     <p class="text-sm text-color-secondary">
-      Nothing was projected by the parent. The card still renders because the child owns the frame
-      and this fallback message.
+      Tu n'as rien projeté depuis le parent. La carte s'affiche quand même parce que l'enfant garde
+      le cadre et ce message de secours.
     </p>
-    <div class="empty-state">Fallback content from the card component</div>
+    <div class="empty-state mt-3 p-3 border-round-lg text-center">
+      Contenu de secours fourni par le composant carte
+    </div>
   </ng-content>
 </p-card>

@@ -1,10 +1,5 @@
 .default-card-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   min-height: 190px;
-  padding: 20px;
-  border-radius: 14px;
   color: #ffffff;
   background:
     linear-gradient(135deg, rgba(15, 23, 42, 0.12), rgba(15, 23, 42, 0.7)),
@@ -21,11 +16,4 @@
   margin-top: 8px;
   font-size: 1.55rem;
   line-height: 1.05;
-}
-
-.default-card-footer {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 20px;
 }
