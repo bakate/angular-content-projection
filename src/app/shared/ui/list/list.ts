@@ -1,0 +1,12 @@
+
+import { Component, input } from '@angular/core';
+
+@Component({
+  selector: 'list',
+  imports: [],
+  templateUrl: './list.html',
+  styleUrl: './list.css',
+})
+export class List {
+  title = input<string>('');
+}

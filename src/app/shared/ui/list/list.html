@@ -1,0 +1,9 @@
+
+<div class="card">
+  @if (title()) {
+    <h3 class="text-lg font-semibold mb-3">{{ title() }}</h3>
+  }
+  <ul class="list-none p-0 m-0">
+    <ng-content></ng-content>
+  </ul>
+</div>
