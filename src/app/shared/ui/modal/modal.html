@@ -1,0 +1,9 @@
+
+<p-dialog 
+  [(visible)]="visible" 
+  [header]="header()"
+  [modal]="true"
+>
+  <ng-content></ng-content>
+  <ng-content select="[modal-footer]"></ng-content>
+</p-dialog>
