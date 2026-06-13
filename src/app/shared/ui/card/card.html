@@ -1,0 +1,40 @@
+<p-card >
+  <!-- Header Slot -->
+
+    <ng-content select="[card-header], .card-header">
+      <img alt="Card" class="w-full" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" height="250" width="400" />
+    </ng-content>
+
+  <!-- Title Slot -->
+
+
+      <ng-content select="[card-title], .card-title">
+        <h3>Default Advanced Card</h3>
+      </ng-content>
+
+
+    <!-- Subtitle Slot -->
+    <div class=" mt-1">
+      <ng-content select="[card-subtitle], .card-subtitle">
+        <p class="text-sm text-color-secondary m-0">Default Card subtitle</p>
+      </ng-content>
+    </div>
+
+    <!-- Content Slot -->
+    <div class="mt-3">
+      <ng-content select="[card-content], .card-content">
+        <p class="m-0">Default content : Lorem ipsum dolor sit amet...</p>
+      </ng-content>
+    </div>
+
+
+  <!-- Footer Slot -->
+
+    <ng-content select="[card-footer], .card-footer">
+      <div class="flex gap-4 mt-1 justify-content-end pt-4">
+        <p-button label="Cancel" severity="secondary" [outlined]="true" />
+        <p-button label="Save" />
+      </div>
+    </ng-content>
+
+</p-card>
